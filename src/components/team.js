@@ -6,20 +6,10 @@ class Team {
         // this.baseTeamURL = `${baseURL}/teams`
     }
 
-    getTeams(){
-        fetch("http://localhost:3000/teams")
-        .then(result => result.json())
-        .then(teams => {
-            teams.forEach(team => {
-                const t = new Team(team)
-                t.addToDOM()
-            })
-        })
-    }
 
     render(){
-        return(`<li id="team-${this.id}" data-id=${this.id}></li>
-        <span>${this.name}</span>`)
+        return(`<li id="team-${this.id}" data-id=${this.id}>
+        <span>${this.name}</span></li>`)
         
     }
 
