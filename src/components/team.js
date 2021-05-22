@@ -3,8 +3,6 @@ class Team {
     static all = []
 
     constructor({id, name, creator, characters}){
-        console.log(characters)
-      
         this.id = id
         this.name = name 
         this.creator = creator
@@ -36,7 +34,7 @@ class Team {
     renderCharacters(){
         const li = document.getElementById(`team-${this.id}`)
         const ul = document.createElement("ul")
-        ul.id = "char-ul"
+        ul.classList.add("char-ul")
         console.log(ul.id)
         this.characters.forEach(c => ul.innerHTML += c.render())
         li.append(ul)

@@ -18,6 +18,14 @@ function getTeams(){
     })
 }
 
+// function getCharacter(id){
+//     fetch(`http://localhost:3000/characters/${id}`)
+//     .then(result => result.json())
+//     .then(char => {
+//         new Character({char})
+//     })
+// }
+
 teamsContainer.addEventListener('click', (event) => {
     const parent = event.target.parentElement
     const button = event.target.dataset.action 
@@ -28,22 +36,18 @@ teamsContainer.addEventListener('click', (event) => {
                 console.log(parent)
                 break
             }
-                // console.log(event.target)
                 const team = Team.all.find(x => x.id == parent.dataset.id)
                 team.renderCharacters()
                 event.target.innerText = "Hide Characters"
                 break
+       
+        case "attributes":
+            const char = Character.all.find(y => y.id == parent.dataset.id)
+                char.renderAttributes
+                console.log(char)
+           
                 
 
-        // case "team-2":
-        //     if(charactersDisplayed) {   
-        //         charactersDisplayed.remove()
-        //         console.log('test')
-        //         break
-        //     }else 
-        // console.log('team2 clicked')
-        // const team2 = Team.all.find(x => x.id == event.target.dataset.id)
-        // team2.renderCharacters()
     } 
    
 })
