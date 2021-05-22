@@ -10,6 +10,8 @@ class Character {
     }
 
     render(){
-        return(`<li data-id=${this.id}><span>${this.name}</span></li>`)
+        return(`<li id="att-li" data-id=${this.id}><span>${this.name}</span>
+        <button id="att-buttons" data-action='attributes'>Attributes</button>
+        </li>`)
     }
 }

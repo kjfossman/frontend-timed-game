@@ -36,6 +36,8 @@ class Team {
     renderCharacters(){
         const li = document.getElementById(`team-${this.id}`)
         const ul = document.createElement("ul")
+        ul.id = "char-ul"
+        console.log(ul.id)
         this.characters.forEach(c => ul.innerHTML += c.render())
         li.append(ul)
 
