@@ -1,6 +1,6 @@
 const teamsContainer = document.getElementById("teams-container")
-const teamBase = new Team("http://localhost:3000")
-
+// const teamBase = new Team("http://localhost:3000")
+let charactersDisplayed = false 
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
@@ -21,12 +21,19 @@ function getTeams(){
 teamsContainer.addEventListener('click', (event) => {
     switch(event.target.id){
         case "team-1":
-        console.log(event.target.dataset)
-        console.log(event.target.dataset.action)
-        break
+            if(charactersDisplayed == false){
+                console.log(charactersDisplayed)
+                const team = Team.all.find(x => x.id == event.target.dataset.id)
+                team.renderCharacters()
+            }else{
+                charactersDisplayed.remove()
+            }
+                break
 
         case "team-2":
         console.log('team2 clicked')
+        const team2 = Team.all.find(x => x.id == event.target.dataset.id)
+        team2.renderCharacters()
     } 
    
 })
