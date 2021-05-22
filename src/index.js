@@ -21,16 +21,22 @@ function getTeams(){
 teamsContainer.addEventListener('click', (event) => {
     switch(event.target.id){
         case "team-1":
-            if(charactersDisplayed == false){
+            if(charactersDisplayed) {   
+                charactersDisplayed.remove()
+                console.log('test')
+                break
+            }else 
                 console.log(charactersDisplayed)
                 const team = Team.all.find(x => x.id == event.target.dataset.id)
                 team.renderCharacters()
-            }else{
-                charactersDisplayed.remove()
-            }
                 break
 
         case "team-2":
+            if(charactersDisplayed) {   
+                charactersDisplayed.remove()
+                console.log('test')
+                break
+            }else 
         console.log('team2 clicked')
         const team2 = Team.all.find(x => x.id == event.target.dataset.id)
         team2.renderCharacters()
