@@ -21,7 +21,9 @@ class Team {
     render(){
        
         return(`<li id="team-${this.id}" data-id=${this.id}>
-        <span>${this.name}</span></li>`)
+        <span>${this.name}</span>
+        <button data-action='characters'>Characters</button>
+        </li>`)
         
     }
 

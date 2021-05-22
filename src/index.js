@@ -19,27 +19,31 @@ function getTeams(){
 }
 
 teamsContainer.addEventListener('click', (event) => {
-    switch(event.target.id){
-        case "team-1":
-            if(charactersDisplayed) {   
-                charactersDisplayed.remove()
-                console.log('test')
+    const parent = event.target.parentElement
+    const button = event.target.dataset.action 
+    switch(button){
+        case "characters":
+            if(charactersDisplayed && event.target.innerText === "Hide Characters") {parent.children[2].remove() 
+                event.target.innerText = "Characters"
+                console.log(parent)
                 break
-            }else 
-                console.log(charactersDisplayed)
-                const team = Team.all.find(x => x.id == event.target.dataset.id)
+            }
+                // console.log(event.target)
+                const team = Team.all.find(x => x.id == parent.dataset.id)
                 team.renderCharacters()
+                event.target.innerText = "Hide Characters"
                 break
+                
 
-        case "team-2":
-            if(charactersDisplayed) {   
-                charactersDisplayed.remove()
-                console.log('test')
-                break
-            }else 
-        console.log('team2 clicked')
-        const team2 = Team.all.find(x => x.id == event.target.dataset.id)
-        team2.renderCharacters()
+        // case "team-2":
+        //     if(charactersDisplayed) {   
+        //         charactersDisplayed.remove()
+        //         console.log('test')
+        //         break
+        //     }else 
+        // console.log('team2 clicked')
+        // const team2 = Team.all.find(x => x.id == event.target.dataset.id)
+        // team2.renderCharacters()
     } 
    
 })
