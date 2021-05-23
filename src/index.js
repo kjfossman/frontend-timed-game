@@ -33,7 +33,6 @@ teamsContainer.addEventListener('click', (event) => {
         case "characters":
             if(charactersDisplayed && event.target.innerText === "Hide Characters") {parent.children[2].remove() 
                 event.target.innerText = "Characters"
-                console.log(parent)
                 break
             }
                 const team = Team.all.find(x => x.id == parent.dataset.id)
@@ -42,11 +41,16 @@ teamsContainer.addEventListener('click', (event) => {
                 break
        
         case "attributes":
-            const char = Character.all.find(y => y.id == parent.dataset.id)
-                char.renderAttributes
-                console.log(char)
-           
-                
+            if(parent.getElementsByTagName("ul").length == 0){
+                const char = Character.all.find(y => y.id == parent.dataset.id)
+                char.renderAttributes(char)
+                console.log(parent.getElementsByTagName("ul"))
+                event.target.innerText = "Hide Attributes"
+                break
+            }else{
+                parent.children[4].remove()
+                event.target.innerText = "Show Attributes"
+            }
 
     } 
    

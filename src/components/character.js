@@ -15,17 +15,16 @@ class Character {
 
     render(){
         return(`<li class="att-li" id="char-${this.id}" data-id=${this.id}><span>${this.name}</span>
-        <button id="att-buttons" data-action='attributes'>Attributes</button>
-        </li>`)
+        <button class="att-buttons" data-action='attributes'>Show Attributes</button><br><img class="char-img" src="${this.image_url}">
+         </li>`)
     }
 
 
-    renderAttributes(){
+    renderAttributes(char){
         const li = document.getElementById(`char-${this.id}`)
         const ul = document.createElement("ul")
-        this.attributes.forEach(c => ul.innerHTML += c.render())
+        Object.entries(char).slice(3,6).forEach(a => ul.innerHTML += `<li>${a[0].toUpperCase()}: ${a[1]}</li>`)
         li.append(ul)
-
         charactersDisplayed = ul
     }
 }

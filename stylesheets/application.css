@@ -1,26 +1,30 @@
-#att-buttons{
+.att-buttons{
     margin: 10px;
     color: red;
     background: #000;
+    vertical-align: middle;
 }
 
 h1{
     color: red;
 }
 
-/* .att-li{
-    background-color: greenyellow;
-} */
+.att-li{
+    
+   
+}
 
+.char-img{
+    max-width: 15%;
+    
+}
 
 
 .char-ul{
     font-size: large;
    
    border: 5px solid red;
-   /* animation-name: blinking;
-   animation-duration: 2s;
-   animation-iteration-count: 100; */
+  
  }
 
  @keyframes blinking {
