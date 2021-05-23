@@ -15,7 +15,7 @@ class Character {
 
     render(){
         return(`<li class="att-li" id="char-${this.id}" data-id=${this.id}><span>${this.name}</span>
-        <button class="att-buttons" data-action='attributes'>Show Attributes</button><br><img class="char-img" src="${this.image_url}">
+        <button class="att-buttons" data-action='attributes'>Show Attributes</button><br><img data-action="image" class="char-img" src="${this.image_url}">
          </li>`)
     }
 

@@ -44,14 +44,17 @@ teamsContainer.addEventListener('click', (event) => {
             if(parent.getElementsByTagName("ul").length == 0){
                 const char = Character.all.find(y => y.id == parent.dataset.id)
                 char.renderAttributes(char)
-                console.log(parent.getElementsByTagName("ul"))
                 event.target.innerText = "Hide Attributes"
                 break
             }else{
                 parent.children[4].remove()
                 event.target.innerText = "Show Attributes"
+                break
             }
+         case "image":
+            console.log('i clicked the image!')
 
-    } 
+
+        } 
    
 })
