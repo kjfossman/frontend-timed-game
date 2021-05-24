@@ -20,11 +20,17 @@ class Character {
     }
 
 
-    renderAttributes(char){
+    renderAttributes(){
         const li = document.getElementById(`char-${this.id}`)
         const ul = document.createElement("ul")
-        Object.entries(char).slice(3,6).forEach(a => ul.innerHTML += `<li>${a[0].toUpperCase()}: ${a[1]}</li>`)
+        Object.entries(this).slice(3,6).forEach(a => ul.innerHTML += `<li>${a[0].toUpperCase()}: ${a[1]}</li>`)
         li.append(ul)
         charactersDisplayed = ul
+    }
+
+    addToSelectedCharacter(){ 
+        const container = document.getElementById("selected-character")
+        container.innerText = this.name + " Selected"
+        console.log(container)
     }
 }

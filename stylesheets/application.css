@@ -10,25 +10,26 @@ h1{
 }
 
 .att-li{
-    
-   
+     
 }
 
 .char-img{
     max-width: 15%;
-    
 }
 
 
 .char-ul{
     font-size: large;
-   
-   border: 5px solid red;
-  
+    border: 5px solid red;
  }
 
  @keyframes blinking {
     50% {
       border-color: white;
     }
+}
+
+#selected-character{
+    display: inline-block;
+    color: blue;
 }

@@ -43,7 +43,7 @@ teamsContainer.addEventListener('click', (event) => {
         case "attributes":
             if(parent.getElementsByTagName("ul").length == 0){
                 const char = Character.all.find(y => y.id == parent.dataset.id)
-                char.renderAttributes(char)
+                char.renderAttributes()
                 event.target.innerText = "Hide Attributes"
                 break
             }else{
@@ -52,7 +52,9 @@ teamsContainer.addEventListener('click', (event) => {
                 break
             }
          case "image":
-            console.log('i clicked the image!')
+            const char = Character.all.find(y => y.id == parent.dataset.id)
+            char.addToSelectedCharacter()
+
 
 
         } 
