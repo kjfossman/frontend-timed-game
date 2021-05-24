@@ -2,25 +2,15 @@ const teamsContainer = document.getElementById("teams-container")
 // const teamBase = new Team("http://localhost:3000")
 let charactersDisplayed = false 
 
-var sound = new Howl({
-    src: ['../audio/smb_powerup.wav']  
-  });
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
     getTeams()
 });
 
-function getTeams(){
-    fetch("http://localhost:3000/teams")
-    .then(result => result.json())
-    .then(teams => {
-        teams.forEach(team => {
-            const t = new Team(team)
-            t.addToDOM()
-        })
-    })
-}
+
+
+
 
 // function getCharacter(id){
 //     fetch(`http://localhost:3000/characters/${id}`)
@@ -45,22 +35,26 @@ teamsContainer.addEventListener('click', (event) => {
                 break
        
         case "attributes":
+            let x = document.getElementById("attributes")
+            // if(x.length == 0)
             if(parent.getElementsByTagName("ul").length == 0){
                 const char = Character.all.find(y => y.id == parent.dataset.id)
                 char.renderAttributes()
-                event.target.innerText = "Hide Attributes"
+                if(x)x.remove() 
                 break
-            }else{
+            }else{ 
                 parent.children[4].remove()
-                event.target.innerText = "Show Attributes"
                 break
             }
          case "image":
             const char = Character.all.find(y => y.id == parent.dataset.id)
+            const selectedCharacter = document.getElementById("selected-character")
+            if(selectedCharacter.innerText == char.name){
+                sound2.play()
+                console.log('it was selected')
+                break
+            }else
             char.addToSelectedCharacter()
-
-
-
         } 
    
 })

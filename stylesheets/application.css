@@ -30,6 +30,5 @@ h1{
 }
 
 #selected-character{
-    display: inline-block;
     color: blue;
 }

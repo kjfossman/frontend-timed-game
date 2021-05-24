@@ -26,7 +26,6 @@ class Team {
     }
 
     addToDOM(){
-        console.log(this)
         const teamsContainer = document.getElementById("teams-container")
         teamsContainer.innerHTML += this.render()
     }
