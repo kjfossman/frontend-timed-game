@@ -2,11 +2,19 @@ const teamsContainer = document.getElementById("teams-container")
 // const teamBase = new Team("http://localhost:3000")
 let charactersDisplayed = false 
 
+let updateChar = document.getElementsByTagName("button")
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
     getTeams()
 });
+
+
+teamsContainer.addEventListener("submit", (event) => {
+    event.preventDefault()
+    console.log('prevented default')
+    updateCharURL(event)
+})
 
 
 
@@ -41,6 +49,10 @@ teamsContainer.addEventListener('click', (event) => {
                 const char = Character.all.find(y => y.id == parent.dataset.id)
                 char.renderAttributes()
                 if(x)x.remove() 
+                
+                updateChar = document.getElementById('update-char')
+              
+               
                 break
             }else{ 
                 parent.children[4].remove()

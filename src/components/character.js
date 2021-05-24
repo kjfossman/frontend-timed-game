@@ -25,7 +25,11 @@ class Character {
         const ul = document.createElement("ul")
         ul.id = "attributes"
         Object.entries(this).slice(3,6).forEach(a => ul.innerHTML += `<li>${a[0].toUpperCase()}: ${a[1]}</li>`)
-        ul.innerHTML += `<button id="update-char">Update Character Image</button>`
+        ul.innerHTML += `<form>
+                            
+                            <input type="text" id="image_url" name="image_url" value="Update Image URL"<br>
+                            <input type="submit" value="Update">
+                            </form>`
         li.append(ul)
         charactersDisplayed = ul
     }
