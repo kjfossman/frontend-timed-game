@@ -29,6 +29,7 @@ class Character {
     }
 
     addToSelectedCharacter(){ 
+        sound.play()
         const container = document.getElementById("selected-character")
         container.innerText = this.name + " Selected"
         console.log(container)

@@ -2,6 +2,10 @@ const teamsContainer = document.getElementById("teams-container")
 // const teamBase = new Team("http://localhost:3000")
 let charactersDisplayed = false 
 
+var sound = new Howl({
+    src: ['../audio/smb_powerup.wav']  
+  });
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
     getTeams()
