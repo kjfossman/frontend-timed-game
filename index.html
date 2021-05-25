@@ -10,8 +10,20 @@
 <body>
     <h1>Timed Game <div id="selected-character"> Choose Character </div></h1>
     <button>Start Game!</button><br><br>
+    
     <div id="teams-container">
 
+    </div><br><br>
+    <div id='create-character'>
+        <form>
+            <label>Name:<input type="text" name="name"></label><br>
+            <label>Image URL:<input type="text" name="image_url"></label><br>
+            <label>Speed:<input type="integer" name="speed"></label><br>
+            <label>Size:<input type="integer" name="size"></label><br>
+            <label>Turning:<input type="integer" name="turning"></label><br>
+            <label>Team:<input type="integer" name="team_id"></label><br>
+            <input type="submit" value="Create Character">
+        </form><br>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
     <script type="text/javascript" src="src/components/character.js"></script>

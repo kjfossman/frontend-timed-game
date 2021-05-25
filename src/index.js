@@ -4,6 +4,9 @@ let charactersDisplayed = false
 
 let updateChar = document.getElementsByTagName("button")
 
+let createCharacterContainer = document.getElementById("create-character")
+
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
     getTeams()
@@ -12,11 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 teamsContainer.addEventListener("submit", (event) => {
     event.preventDefault()
-    console.log('prevented default')
     updateCharURL(event)
 })
 
-
+createCharacterContainer.addEventListener("submit", (event) => {
+    event.preventDefault()
+    console.log('prevented default')
+    createCharacter(event)
+})
 
 
 
