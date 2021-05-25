@@ -10,9 +10,10 @@ function getTeams(){
 }
 
 function updateCharURL(event){
-    debugger
+   
     // This will pull from the data set id have to find that
-    fetch(`http://localhost:3000/characters/1`,{
+   
+    fetch(`http://localhost:3000/characters/${event.target.parentElement.parentElement.dataset.id}`,{
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
@@ -20,12 +21,14 @@ function updateCharURL(event){
         },
         body: JSON.stringify({
             // This is pulling from the input on the webpage
-            image_url: `https://i.etsystatic.com/25594439/r/il/dbbe93/2693967973/il_794xN.2693967973_mdq7.jpg`
+            image_url: event.target.elements[0].value
         })
     })
     .then(result => result.json())
     // This is where I will make it show up on the front end
-    .then(char => console.log(char))
+    .then(char => event.target.parentElement.parentElement.getElementsByTagName("img")[0].src = char['image_url'])
+    
+    // event.target.parentElement.parentElement.getElementsByTagName("img")[0].src = ?
 
 }
 
