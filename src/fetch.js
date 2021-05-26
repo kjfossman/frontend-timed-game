@@ -56,20 +56,25 @@ function createCharacter(event){
     .then(result => result.json())
     // This is where I will make it show up on the front end
     .then(char => {
-        const character = char["character"]
-        const teams = teamsContainer.children
-        for(let i = 0; i < teams.length; i++){
-            if(teams[i].dataset.id == char["character"]["team_id"]){
-                const team = teams[i]
-                const ulc = team.getElementsByTagName("ul")
-                const ul = ulc[0]
-                ul.innerHTML += `<li class="att-li" id="char-${character.id}" data-id=${character.id}><span>${character.name}</span>
-                <button class="att-buttons" data-action='attributes'>Attributes</button><br><img data-action="image" class="char-img" src="${character.image_url}">
-                 </li>`
-                // char.render()
-            }
-        }
-        console.log(char)
+        
+        const nc = new Character(char["character"])
+        const teamAdd = Team.all.find(x => x.id == nc.team_id)
+        teamAdd["characters"].push(nc)
+        debugger
+        // const character = char["character"]
+        // const teams = teamsContainer.children
+        // for(let i = 0; i < teams.length; i++){
+        //     if(teams[i].dataset.id == char["character"]["team_id"]){
+        //         const team = teams[i]
+        //         const ulc = team.getElementsByTagName("ul")
+        //         const ul = ulc[0]
+        //         ul.innerHTML += `<li class="att-li" id="char-${character.id}" data-id=${character.id}><span>${character.name}</span>
+        //         <button class="att-buttons" data-action='attributes'>Attributes</button><br><img data-action="image" class="char-img" src="${character.image_url}">
+        //          </li>`
+        //         // char.render()
+        //     }
+        // }
+        // console.log(char)
     })
     // event.target.parentElement.parentElement.getElementsByTagName("img")[0].src = ?
 }
