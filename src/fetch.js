@@ -90,3 +90,22 @@ function createCharacter(event){
     // event.target.parentElement.parentElement.getElementsByTagName("img")[0].src = ?
 }
 
+function deleteCharacter(event){
+    // This will pull from the data set id have to find that  
+    fetch(`http://localhost:3000/characters/${event.parentElement.dataset.id}`,{
+       method: "DELETE",
+    })
+    .then(result => {
+        console.log(result)
+        return result.json()
+    })
+    .then(char => {
+        if(char.message === "Deleted"){
+            event.parentElement.remove()
+            console.log("deleted")
+        } else {
+            alert(char.message)
+        }
+    })
+    .catch(err => console.error(err))
+}

@@ -17,6 +17,17 @@ h1{
     max-width: 15%;
 }
 
+.selected-char-img{
+    display: inline-block;
+    margin: 10px;
+    max-width: 15%;
+    border: 5px solid red;
+    padding: 5px;
+    animation-name: blinking;
+    animation-duration: 2s;
+    animation-iteration-count: 100;
+}
+
 
 .char-ul{
     font-size: large;

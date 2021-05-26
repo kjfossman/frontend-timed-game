@@ -15,7 +15,8 @@ class Character {
 
     render(){
         return(`<li class="att-li" id="char-${this.id}" data-id=${this.id}><span>${this.name}</span>
-        <button class="att-buttons" data-action='attributes'>Attributes</button><br><img data-action="image" class="char-img" src="${this.image_url}">
+        <button class="att-buttons" data-action='attributes'>Attributes</button>
+        <button class="att-buttons" data-action='delete'>Delete Character</button><br><img data-action="image" class="char-img" src="${this.image_url}">
          </li>`)
     }
 
@@ -39,7 +40,7 @@ class Character {
         const container = document.getElementById("selected-character")
         container.innerText = this.name
         const image = document.createElement("src")
-        image.innerHTML = `<img class="char-img" src="${this.image_url}"></img>`
+        image.innerHTML = `<img class="selected-char-img" src="${this.image_url}"></img>`
         container.append(image)
     }
 }

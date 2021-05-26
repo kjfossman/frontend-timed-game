@@ -54,14 +54,11 @@ teamsContainer.addEventListener('click', (event) => {
             if(parent.getElementsByTagName("ul").length == 0){
                 const char = Character.all.find(y => y.id == parent.dataset.id)
                 char.renderAttributes()
-                if(x)x.remove() 
-                
-                updateChar = document.getElementById('update-char')
-              
-               
+                if(x)x.remove()    
+                updateChar = document.getElementById('update-char') 
                 break
             }else{ 
-                parent.children[4].remove()
+                parent.children[5].remove()
                 break
             }
          case "image":
@@ -69,10 +66,15 @@ teamsContainer.addEventListener('click', (event) => {
             const selectedCharacter = document.getElementById("selected-character")
             if(selectedCharacter.innerText == char.name){
                 sound2.play()
-                console.log('it was selected')
                 break
             }else
             char.addToSelectedCharacter()
+            break
+
+         case "delete":
+             deleteCharacter(event.target)
         } 
+        
+
    
 })
