@@ -39,7 +39,7 @@ teamsContainer.addEventListener('click', (event) => {
     const button = event.target.dataset.action 
     switch(button){
         case "characters":
-            if(charactersDisplayed && event.target.innerText === "Hide Characters") {parent.children[2].remove() 
+            if(event.target.innerText === "Hide Characters") {parent.children[2].remove() 
                 event.target.innerText = "Characters"
                 break
             }

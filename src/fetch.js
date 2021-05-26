@@ -56,11 +56,21 @@ function createCharacter(event){
     .then(result => result.json())
     // This is where I will make it show up on the front end
     .then(char => {
+        if (char["status"] == 201){
+            const nc = new Character(char["character"])
+            const teamAdd = Team.all.find(x => x.id == nc.team_id)
+            teamAdd["characters"].push(nc)
+            if(teamsContainer.children[nc.team_id-1].children[2])
+                teamsContainer.children[nc.team_id-1].children[2].innerHTML += nc.render()
+            }
+            else {
+                alert(char.error)
+            }
+        // if(teamsContainer.children[1].children[1].innerText === "Hide Characters") {teamsContainer.children[1].children[2].remove() 
+        //     teamsContainer.children[1].children[1].innerText = "Characters"
+        // }
         
-        const nc = new Character(char["character"])
-        const teamAdd = Team.all.find(x => x.id == nc.team_id)
-        teamAdd["characters"].push(nc)
-        debugger
+        
         // const character = char["character"]
         // const teams = teamsContainer.children
         // for(let i = 0; i < teams.length; i++){
@@ -76,6 +86,7 @@ function createCharacter(event){
         // }
         // console.log(char)
     })
+    .catch(error => console.error(error))
     // event.target.parentElement.parentElement.getElementsByTagName("img")[0].src = ?
 }
 
