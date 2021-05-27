@@ -34,7 +34,7 @@ createCharacterContainer.addEventListener("submit", (event) => {
 //     })
 // }
 
-teamsContainer.addEventListener('click', (event) => {
+document.addEventListener('click', (event) => {
     const parent = event.target.parentElement
     const button = event.target.dataset.action 
     switch(button){
@@ -70,6 +70,18 @@ teamsContainer.addEventListener('click', (event) => {
             }else
             char.addToSelectedCharacter()
             break
+
+         case "start-game":
+            const selected = document.getElementById("selected-character")
+            if(selected.innerText != "Choose Character"){
+            const c =  Character.all.find(y => y.name == selected.innerText)
+            console.log('start game')
+            start(c)
+            break
+            }else{
+                sound2.play()
+                break 
+            } 
 
          case "delete":
              deleteCharacter(event.target)

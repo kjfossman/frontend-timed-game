@@ -43,3 +43,7 @@ h1{
 #selected-character{
     color: blue;
 }
+
+li{
+    margin: 5px;
+}

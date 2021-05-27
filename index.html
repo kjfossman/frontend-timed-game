@@ -5,32 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheets/application.css">
+    <link rel="stylesheet" href="stylesheets/game.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>Timed Game <div id="selected-character"> Choose Character </div></h1>
-    <button>Start Game!</button><br><br>
-    
-    <div id="teams-container">
+        <h1>Timed Game <div id="selected-character"> Choose Character </div></h1>
+        <button data-action="start-game">Start Game!</button><br><br>
+    <div id="main">
+        <div id="teams-container">
 
-    </div><br><br>
-    <div id='create-character'>
-        <form>
-            <label>Name:<input type="text" name="name"></label><br>
-            <label>Image URL:<input type="text" name="image_url"></label><br>
-            <label>Speed:<input type="integer" name="speed"></label><br>
-            <label>Size:<input type="integer" name="size"></label><br>
-            <label>Turning:<input type="integer" name="turning"></label><br>
-            <label>Team:<input type="integer" name="team_id"></label><br>
-            <input type="submit" value="Create Character">
-        </form><br>
+        </div><br><br>
+        <div id='create-character'>
+            <form>
+                <label>Name:<input type="text" name="name"></label><br>
+                <label>Image URL:<input type="text" name="image_url"></label><br>
+                <label>Speed:<input type="integer" name="speed"></label><br>
+                <label>Size:<input type="integer" name="size"></label><br>
+                <label>Turning:<input type="integer" name="turning"></label><br>
+                <label>Team:<input type="integer" name="team_id"></label><br>
+                <input type="submit" value="Create Character">
+            </form><br>
+        </div>
     </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
-    <script type="text/javascript" src="src/components/character.js"></script>
-    <script type="text/javascript" src="src/components/team.js"></script>
-    <script type="text/javascript" src="src/sounds.js"></script>
-    <script type="text/javascript" src="src/index.js"></script>
-    <script type="text/javascript" src="src/fetch.js"></script>
+    <div id="game" style="display: none;">
+        <canvas id="canvas" height="600" width="1200"></canvas>
+    </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+        <script type="text/javascript" src="src/components/character.js"></script>
+        <script type="text/javascript" src="src/components/team.js"></script>
+        <script type="text/javascript" src="src/sounds.js"></script>
+        <script type="text/javascript" src="src/index.js"></script>
+        <script type="text/javascript" src="src/fetch.js"></script>
+        <script type="text/javascript" src="src/game/game_variables.js"></script>
+        <script type="text/javascript" src="src/game/game.js"></script>
+        
    
    
 </body>
