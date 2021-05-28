@@ -3,5 +3,6 @@ var sound = new Howl({
   });
 
 let sound2 = new Howl({
-src: ['../audio/smb_bump.wav']  
+  src: ['../audio/smb_bump.wav']  
 });
+
