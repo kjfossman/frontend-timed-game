@@ -1,0 +1,6 @@
+class Border {
+
+    constructor() {
+
+    }
+}

@@ -1,6 +1,6 @@
 const teamsContainer = document.getElementById("teams-container")
 // const teamBase = new Team("http://localhost:3000")
-let charactersDisplayed = false 
+
 
 let updateChar = document.getElementsByTagName("button")
 

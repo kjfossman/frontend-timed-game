@@ -38,6 +38,6 @@ class Team {
         this.characters.forEach(c => ul.innerHTML += c.render())
         li.append(ul)
 
-        charactersDisplayed = ul
+        
     }
 }
