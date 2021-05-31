@@ -107,29 +107,6 @@ class Character {
         ctx.fillRect(this.x, this.y, this.width, this.height)
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     render(){
         return(`<li class="att-li" id="char-${this.id}" data-id=${this.id}><span>${this.name}</span>
         <button class="att-buttons" data-action='attributes'>Attributes</button>
@@ -149,7 +126,7 @@ class Character {
                             <input type="submit" value="Update">
                             </form>`
         li.append(ul)
-        charactersDisplayed = ul
+   
     }
 
     addToSelectedCharacter(){ 

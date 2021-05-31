@@ -41,7 +41,7 @@ function loop(){
 }
 
 function start(char){
-    debugger
+    
     character = char 
     character.controls()
     if(game.style.display === 'block'){

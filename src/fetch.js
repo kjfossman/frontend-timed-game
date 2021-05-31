@@ -23,6 +23,7 @@ function updateCharURL(event){
         })
     })
     .then(result => result.json())
+    // this is the promise which will then yield something or an error based on what it returns in the next function
     // This is where I will make it show up on the front end
     .then(char => { 
         if (char.status == 204){
