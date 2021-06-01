@@ -2,7 +2,7 @@ const teamsContainer = document.getElementById("teams-container")
 // const teamBase = new Team("http://localhost:3000")
 
 
-let updateChar = document.getElementsByTagName("button")
+// let updateChar = document.getElementsByTagName("button")
 
 let createCharacterContainer = document.getElementById("create-character")
 
@@ -49,13 +49,14 @@ document.addEventListener('click', (event) => {
                 break
        
         case "attributes":
+            
             let x = document.getElementById("attributes")
             // if(x.length == 0)
             if(parent.getElementsByTagName("ul").length == 0){
                 const char = Character.all.find(y => y.id == parent.dataset.id)
                 char.renderAttributes()
                 if(x)x.remove()    
-                updateChar = document.getElementById('update-char') 
+                // updateChar = document.getElementById('update-char') 
                 break
             }else{ 
                 parent.children[5].remove()

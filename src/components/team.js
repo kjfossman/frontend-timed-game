@@ -31,6 +31,7 @@ class Team {
     }
 
     renderCharacters(){
+      
         const li = document.getElementById(`team-${this.id}`)
         const ul = document.createElement("ul")
         ul.classList.add("char-ul")
