@@ -119,6 +119,7 @@ class Character {
         const li = document.getElementById(`char-${this.id}`)
         const ul = document.createElement("ul")
         ul.id = "attributes"
+        debugger
         Object.entries(this).slice(3,6).forEach(a => ul.innerHTML += `<li>${a[0].toUpperCase()}: ${a[1]}</li>`)
         ul.innerHTML += `<form>
                             
